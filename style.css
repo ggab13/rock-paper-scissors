@@ -1,0 +1,250 @@
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+@keyframes computerSelected {
+    
+    0% {width: 145px;
+        height: 160px;}
+    50% {width: 148px;
+        height: 163px;}
+    100% {width: 145px;
+            height: 160px;}                     
+}
+
+@keyframes buttonHigher {
+    
+    0% {width: 130px;
+        height: 45px;}    
+    100% {width: 140px;
+        height: 50px;
+        background-color: red;
+        color: black;
+        border-color: yellow;}                     
+}
+
+@keyframes load {
+    0% {stroke-dashoffset: 638;}
+    20% {stroke-dashoffset: 502.4;}
+    40% {stroke-dashoffset: 376.8;}
+    60% {stroke-dashoffset: 251.2;}
+    80% {stroke-dashoffset: 125.6;}
+    100% {stroke-dashoffset: 0;}
+}
+
+
+.progressCircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle {
+    stroke: #ccc;
+    stroke-width: 14;
+    fill: transparent;
+}
+
+.load {
+    fill: url(#Gradient);
+    stroke: url(#Gradient);
+    fill-opacity: 0;
+    stroke-width: 14;
+    stroke-dasharray: 628;
+    stroke-linecap: round;
+    transition: fill-opacity 0.5s linear;
+    animation: load 3s linear;
+}
+
+.progressScore {
+    font-size: 20px;
+    fill: url(#Gradient);
+    font-family: poppins;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+img:hover{
+    opacity: 0.8;
+}
+
+.imgComputerSelected {
+    animation-name: computerSelected;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    border-color: white;
+    border-width: 5px;  
+  
+}
+
+img {
+    padding: 10px;
+    margin: 15px;
+    width: 145px;
+    height: 160px;
+    background-color: black;
+    border-radius: 20%;
+    overflow: visible;
+    border-style: solid;   
+    position: relative;
+}
+
+img:hover  {
+    animation-name: computerSelected;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;  
+    animation-direction: alternate; 
+    border-width: 5px;  
+    border-color: white;
+    border-width: 5px;  
+    
+}
+img:active {
+    border-color: yellow;
+    border-width: 5px;    
+}
+
+body {
+    background-color: white;    
+    font-style: normal;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p,h2 {
+    color: white;
+}
+
+#playAgain {
+    width: 130px;
+    height: 45px;
+    text-align: center;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 28%;
+    color: white;
+    background-color: #3399ff;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    font-weight: bold;
+    border-radius: 20px;
+}
+#playAgain:hover {
+    animation-name: buttonHigher;
+    animation-direction: alternate; 
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+   
+
+}
+.game {
+    border-radius: 15px;
+   -moz-border-radius: 15px;
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+    -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 5s; /* Firefox < 16 */
+        -ms-animation: fadein 5s; /* Internet Explorer */
+         -o-animation: fadein 5s; /* Opera < 12.1 */
+            animation: fadein 5s;
+    position:absolute;
+    width:1100px;
+    height:850px;
+    left:50%;
+    top:50%;
+    margin-left:-550px;
+    margin-top:-400px;
+    text-align: center;
+    justify-content: center;  
+    justify-content: center;  
+    display: grid;    
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "gridPlayer gridGameName gridComputer"
+    "gridPlayer gridGameScore gridComputer"
+    "gridPlayer gridGameProgress gridComputer"
+    
+
+
+
+}
+.section-game {
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    padding: 10px;
+    margin: 20px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: black;
+    background-color: white;
+    justify-content: center;
+    margin-top: 100px;
+    
+    
+}
+.section-player { 
+    border-color: black;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50px;
+    background-color:#E62929;
+    -moz-border-radius: 50px;
+    grid-area: gridPlayer;
+    background-color: red;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    pointer-events: auto;   
+
+}
+.lost { 
+  
+    pointer-events: none;   
+
+}
+.notLost {
+    pointer-events: auto; 
+}
+.section-game-name {
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    grid-area: gridGameName;    
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    
+}
+
+.section-game-score {
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    grid-area: gridGameScore; 
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+  
+
+}
+.section-game-progress {
+    grid-area: gridGameProgress;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+}
+.section-computer {
+    border-color: black;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    grid-area: gridComputer;
+    background-color: #03C93E;
+    pointer-events: none;
+}
+
+

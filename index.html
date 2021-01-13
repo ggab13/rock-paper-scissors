@@ -1,109 +1,45 @@
-<script>     
-    
-    
-    //var playerSelection = "Paper";            
-    //var computerSelection = computerPlay();
-    //var computerSelection1 = computerPlay();
-    //console.log(singleRound(playerSelection, computerSelection));
-    // console.log(computerSelection);
-    //console.log(computerSelection1);
-    
-    var computerSelections = [];
-    var playerSelections = [];
-    var things = ['Rock', 'Paper', 'Scissor'];
-    var playerPoints = 0;
-    var computerPoints = 0;      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="game">
+        <div class="section-player">          
+            <h2>Player</h2>
+            <p><p id="playerChoice">Choice</p>
+            <img src="Rock.png" id="Rock" class="notLost">
+            <img src="Paper.png" id="Paper" class="notLost">
+            <img src="Scissor.png" id="Scissor" class="notLost">                      
+        </div>
 
-    game(); 
-    
-    function computerPlay(){
-        var outcome;
-        outcome = things[Math.floor(Math.random()*things.length)];
-        return outcome;
-    }
+        <div class="section-game">            
+            <div class="section-game-name">
+             <h1>Rock Paper Scissors</h1></div>
+            <div class ="section-game-score">                
+                <h1>Score</h3>               
+                <h1 id="gameScore">0-0</h1>
+            </div>      
+            <button id="playAgain" class="playerButtons inactive" >Play Again</button>
+            <div class="section-game-progress">                
+                <h3 id="gameProgress">Good Luck</h3>              
+            </div>
+        </div>
 
-    function singleRound(playerSelection, computerSelection){
+        <div class="section-computer">
+            <div class="computer-choice">
+                <h2>Computer</h2>
+                <p id="computerChoice">Choice</p>
+                <img src="Rock.png" id="computerRock" class="playerButtons" >
+                <img src="Paper.png" id="computerPaper" class="playerButtons">
+                <img src="Scissor.png" id="computerScissor" class="playerButtons">     
+            </div>
+        </div>        
+    </div>
 
-        if(playerSelection.toUpperCase() === computerSelection.toUpperCase()){
-            console.log("Its a tie");
-            return "Its a tie";
-        }
-        else if(playerSelection === "Rock")
-        {   
-            if(computerSelection === "Scissor"){
-                playerPoints++;
-                console.log(`${playerSelection} beats ${computerSelection}`);
-                return `${playerSelection} beats ${computerSelection}`;
-            } else if(computerSelection ==="Paper") {
-                computerPoints++;
-                console.log(`${computerSelection} beats ${playerSelection}`);
-                return `${computerSelection} beats ${playerSelection}`;
-            }
-            
-        }
-
-        else if(playerSelection === "Paper")
-        {   
-            if(computerSelection === "Rock"){
-                playerPoints++;
-                console.log(`${playerSelection} beats ${computerSelection}`);
-                return `${playerSelection} beats ${computerSelection}`;
-            } else if(computerSelection === "Scissor") {
-                computerPoints++;
-                console.log(`${computerSelection} beats ${playerSelection}`);
-                return `${computerSelection} beats ${playerSelection}`;
-            }
-            
-        }
-
-        else if(playerSelection === "Scissor")
-        {   
-            if(computerSelection === "Paper"){
-                playerPoints++;
-                console.log(`${playerSelection} beats ${computerSelection}`);
-                return `${playerSelection} beats ${computerSelection}`;
-            } else if(computerSelection === "Rock") {
-                computerPoints++;
-                console.log(`${computerSelection} beats ${playerSelection}`);
-                return `${computerSelection} beats ${playerSelection}`;
-            }
-            
-        }
-    }  
-    
-
-    function game(){                   
-
-        while((playerPoints || computerPoints) != 5 ) {        
-
-           // console.log ("Player: " +playerPoints);
-           // console.log ("Computer: " + computerPoints);          
-
-            // Computer randomly choose options
-            var computerSelection = computerPlay();
-            // Player  choose options with prompt
-            var playerSelection = prompt("Enter your choice");
-            // Choice added to computerSelection array
-            computerSelections.push(computerSelection);
-            // Choice added to playerSelection array
-            playerSelections.push(playerSelection);
-            // Play a match
-            singleRound(playerSelection, computerSelection);  
-
-            console.log("Player Choice: "+ playerSelection + " - Player Points: " + playerPoints + "\n" +
-            "Computer Choice: "+ computerSelection + " - Computer Points: " + computerPoints + "\n"+
-            "--------------------------------------------------------------");
-
-                if (playerPoints === 5) {
-                console.log("Player Won!");
-                }  else if (computerPoints === 5) {        
-                    console.log("Computer Won!");
-                } else {
-                
-                }
-            }  
-
-        
-    }         
-            
-</script>
+<script src="app.js"></script>
+</body>
+</html>
