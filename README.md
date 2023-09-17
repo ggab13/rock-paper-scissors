@@ -7,7 +7,7 @@
 
 This is a simple implementation of the classic Rock-Paper-Scissors game. It allows users to play against the computer, making their choices and comparing them to see who wins each round.
 
-You can view the live demo of this project [Link to Demo](https://your-demo-link-here.com)
+You can view the live demo of this project [--> Here <--](https://your-demo-link-here.com)
 
 ## Built With
 
