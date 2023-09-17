@@ -1,6 +1,7 @@
 # Rock-Paper-Scissors
 
-![Game Preview](game-preview.png)
+![rockPaperScissors](https://github.com/ggab13/rock-paper-scissors/assets/67071512/db33baea-78ec-4361-90a6-f1676959d875)
+
 
 ## Description
 
