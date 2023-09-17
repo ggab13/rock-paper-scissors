@@ -30,4 +30,4 @@ git clone https://github.com/ggab13/rock-paper-scissors.git
 ```sh
  cd rock-paper-scissors  
  ```
-3. - Open the index.html file in your web browser to view the Google homepage clone.
+3. - Open the index.html file in your web browser to play the game.
